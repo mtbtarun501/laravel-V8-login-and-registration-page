@@ -51,7 +51,7 @@ Run:
 ```bash
 php artisan migrate
 ```
-
+====================================================================================================================================================================
 ---
 
 # 2 — User model
@@ -75,6 +75,7 @@ class User extends Authenticatable
     ];
 }
 ```
+====================================================================================================================================================================
 
 ---
 
@@ -114,6 +115,7 @@ Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 ```
+====================================================================================================================================================================
 
 ---
 
@@ -210,10 +212,10 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         // Validate input
-        $credentials = $request->validate([
+            $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required|string',
-        ]);
+            ]);
 
         $remember = (bool) $request->input('remember');
 
@@ -240,6 +242,7 @@ class LoginController extends Controller
     }
 }
 ```
+====================================================================================================================================================================
 
 ---
 
@@ -290,6 +293,7 @@ Create these blades under `resources/views/auth/`
 </div>
 @endsection
 ```
+====================================================================================================================================================================
 
 ## resources/views/auth/login.blade.php
 
@@ -328,6 +332,7 @@ Create these blades under `resources/views/auth/`
 </div>
 @endsection
 ```
+====================================================================================================================================================================
 
 ## resources/views/dashboard.blade.php
 
@@ -350,6 +355,8 @@ Create these blades under `resources/views/auth/`
 > **Tip:** Use `@error('field')` and `old('field')` to show field-specific errors and keep inputs.
 
 ---
+====================================================================================================================================================================
+
 
 # 6 — Validation rules & best practices (explanation)
 
@@ -364,6 +371,8 @@ Create these blades under `resources/views/auth/`
 * On logout: `Auth::logout(); $request->session()->invalidate(); $request->session()->regenerateToken();`
 
 ---
+====================================================================================================================================================================
+
 
 # 7 — Remember: security & extras
 
@@ -374,6 +383,8 @@ Create these blades under `resources/views/auth/`
 * **HTTPS** in production, secure cookies, `SameSite` config in `config/session.php`.
 
 ---
+====================================================================================================================================================================
+
 
 # 8 — Testing & seeding a test user
 
@@ -418,6 +429,8 @@ php artisan serve
 ```
 
 ---
+====================================================================================================================================================================
+
 
 # 9 — Common errors & how to fix
 
